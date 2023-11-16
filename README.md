@@ -136,28 +136,6 @@ Logistic regression analyzed the relationship between cereal characteristics and
 [R Markdown](https://github.com/klg125/portfolio/blob/master/notebooks/Cereal%20Case.Rmd) 
 [Notebook](https://github.com/klg125/portfolio/blob/master/notebooks/Cereal%20Clustering%20Case.pdf)
 
-Bag of Words Meets Bags of Popcorn is a sentimental analysis problem. Based on texts of reviews we predict whether they are positive or negative. General description and data are available on [Kaggle](https://www.kaggle.com/c/word2vec-nlp-tutorial).
-The data provided consists of raw reviews and class (1 or 2), so the main part is cleaning the texts.
-
-### NLP with Python: exploring Fate/Zero
-
-[Github](https://github.com/Erlemar/Erlemar.github.io/blob/master/Notebooks/Fate_Zero_explore.ipynb) [nbviewer](http://nbviewer.jupyter.org/github/Erlemar/Erlemar.github.io/blob/master/Notebooks/Fate_Zero_explore.ipynb)
-
-Natural language processing in machine learning helps to accomplish a variety of tasks, one of which is extracting information from texts. This notebook is an overview of several text exploration methods using English translation of Japanese light novel "Fate/Zero" as an example.
-
-### NLP. Text generation with Markov chains
-
-[Github](https://github.com/Erlemar/Erlemar.github.io/blob/master/Notebooks/Markov_chain_nlp.ipynb) [nbviewer](http://nbviewer.jupyter.org/github/Erlemar/Erlemar.github.io/blob/master/Notebooks/Markov_chain_nlp.ipynb)
-
-This notebook shows how a new text can be generated based on a given corpus using an idea of Markov chains. I start with simple first-order chains and with each step improve model to generate better text.
-
-### NLP. Text summarization
-
-[Github](https://github.com/Erlemar/Erlemar.github.io/blob/master/Notebooks/Summarize.ipynb) [nbviewer](http://nbviewer.jupyter.org/github/Erlemar/Erlemar.github.io/blob/master/Notebooks/Summarize.ipynb)
-
-This notebook shows how text can be summarized choosing several most important sentences from the text. I explore various methods of doing this based on a news article.
-
-
 ## Recommendation systems + NLP 
 
 ### Collaborative filtering, Latent semantic analysis
