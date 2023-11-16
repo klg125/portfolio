@@ -1,19 +1,15 @@
 
 # Data science Portfolio By Jing Ming Li
 
-Hi! My name is JM Kevin Li, a impact-driven data scientist with previous experiences at Blackstone, Cboe Global Markets, Calamos Investments, and Dunkin'. Welcome to my portfolio. Below is a list of all my projects. 
+Hi! My name is JM Kevin Li, a impact-driven data scientist with previous experiences at Blackstone, Cboe Global Markets, Calamos Investments, and Dunkin'. Welcome to my portfolio. Below is a list of all my projects. Here is a copy of my [resume](https://github.com/klg125/portfolio/blob/master/notebooks/Kevin_Li_Resume_0920.pdf)
 
-## Stand-alone projects.
-
-
-## Classification Problem 
+## Classification Problems 
 
 ### Amazon Reviews Classifications 
 
 [Notebook](https://github.com/klg125/portfolio/blob/master/notebooks/AmazonReviews_Classification.ipynb)
 
 Applied TF-IDF and sentiment analysis on 500K pre-processed retail reviews, built a late fusion algorithm on tuned SVM and Neural Network models to classify ‘positive’ and ‘negative’ reviews, achieving 0.91 F1-score on test set.
-
 
 ## Clustering + Dimensionality Reduction 
 
@@ -37,6 +33,18 @@ Logistic regression analyzed the relationship between cereal characteristics and
 [Code](https://github.com/klg125/portfolio/blob/master/notebooks/ProjectLSA%20(1).R)
 
 I leveraged LSA to create 7-dimensional user and recipe profile to recommend 10 new recipes for 3000 test users similar to previously downloaded recipes, achieving 32% precision@10 score.
+
+## Regression Problems
+
+### Opioid-Related Emergency Department Admissions Prediction through Internet Search Keywords
+[Report](https://github.com/klg125/portfolio/blob/master/notebooks/Opioid_STEMFellowship.pdf)
+
+Employed a polynomial regression model to examine whether keywords from Google Trends can predict opioid-related emergency department (ED) visits; accounted for 99% of variance in ED visits through best-fitting model.
+
+### Constructing a Portfolio from Sentiments of Stock Ticker Symbols and Live News
+[Report](https://github.com/klg125/portfolio/blob/master/notebooks/StockReturns.pdf)
+
+Built sentiment-based portfolio by normalizing likability of ticker symbol and by regressing this portfolio on the Fama-French three-factor model; achieved 0.027% monthly outperformance compared to benchmark portfolio.
 
 ## Deep Learning
 
