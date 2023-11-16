@@ -1,0 +1,257 @@
+---
+title: "Question 3"
+author: "Sarah Fazio"
+date: "2023-02-01"
+output: pdf_document
+---
+
+Write a function to generate data for this problem with parameter μ. There are K = 2 equal-sized clusters with one cluster sampled from N(−μ,σ2) and the other from N(μ,σ2), where σ2 = 1. Assume n1 = n2 = 3000 observations from each (Mclus will start to have problems for larger n, but Python should be able to handle somewhat larger sample sizes, and K-means can easily handle much larger n). Estimate GMM and K-means models for μ = 0.5, 1 and 2. Report the estimated means and variances. Discuss the results, especially the biases discussed in class and how they are affected by the separation of the means.
+
+
+```{r}
+library(factoextra)
+library(cluster)
+library(mclust)
+library(lattice)
+```
+
+
+```{r}
+##generating data
+
+#give a mean, standard deviation, and number of observations as inputs
+normal <- function(u, sd, n) {
+  
+  #create one distribution/cluster with positive mu
+  dist1 <- rnorm(n, u, sd)
+  
+  #create one distribution/cluster with negative mu
+  dist2 <- rnorm(n, -u, sd)
+  
+  #combine these two clusters into one data set
+  c(dist1, dist2)
+}
+
+```
+
+KMeans -- how to visualize??
+```{r}
+#printing outputs
+km_means <- matrix(, nrow=3,ncol = 2)
+km_var <- matrix(,nrow=3,ncol = 2)
+
+gmm_means <- matrix(, nrow=3,ncol = 2)
+gmm_var <- matrix(,nrow=3,ncol = 2)
+
+gmm_var_2 <- c(0, 0, 0)
+
+
+count <- 0
+
+set.seed(8857436)
+
+##parameters for data generation
+num_observ_1 = 3000
+num_observ_2 = 3000
+sd_1 = 1
+sd_2 = 1
+
+input_parameter = c(0.5, 1, 2)
+
+for(i in 1:length(input_parameter)) {
+  
+  
+  #increment count for placing/summarizing output
+  count <- count + 1
+  
+  #generating data
+  dist1 <- rnorm(num_observ_1, input_parameter[i], sd_1)
+  dist2 <- rnorm(num_observ_2, -input_parameter[i], sd_2)
+
+  #combining the data for each mu
+  data = c(dist1, dist2)
+  
+  #running k-means on the data
+  clus_km <- kmeans(data, centers = 2)
+  
+  #running Gaussian mixture
+  clus_gmm <- Mclust(data, G= 2)
+  
+  #hist(data)
+  #rug(data, col = clus$cluster)
+  #plot(data, clus$cluster)
+  #plot(data, jitter(clus$cluster))
+  
+  #adding means and variance for each cluster for kmeans
+  km_means[count,1] = mean(data[clus_km$cluster == 1])
+  km_var[count,1] = sd(data[clus_km$cluster == 1])^2
+  km_means[count,2] = mean(data[clus_km$cluster == 2])
+  km_var[count,2] = sd(data[clus_km$cluster == 2])^2
+  
+  #reporting means and variance for each cluster for Gaussian
+  gmm_means[count,1] = clus_gmm$parameter$mean[1]
+  gmm_var[count,1] = sd(data[clus_gmm$classification == 1])^2
+  gmm_means[count,2] = clus_gmm$parameter$mean[2]
+  gmm_var[count,2] = sd(data[clus_gmm$classification == 2])^2
+
+  gmm_var_2[count] = clus_gmm$parameter$variance$sigmasq
+
+}
+
+
+```
+
+
+```{r}
+## adding $parameter$variance$sigmasq
+#gmm_var_2 <- c(0, 0, 0)
+
+#gmm_var_2[count] = clus_gmm$parameter$variance$sigmasq
+
+ # x = c(dist1, dist2)
+  # y = c(rep(0,200), rep(1,200))
+  # densityplot(~x|as.factor(y), layout=c(1,2), n=200, width=1.5)
+  # densityplot(~x, n=200, width=1.5)
+
+gmm_var_2
+```
+
+
+Mean of 0.5
+
+```{r}
+cat("For input mean of", input_parameter[1], "and cluster 1, kmeans means is: \n",
+          km_means[1, 1], "  \n")
+
+cat("For input mean of", input_parameter[1], "and cluster 2, kmeans means is: \n",
+          km_means[1, 2], "  \n")
+
+cat("For input mean of", input_parameter[1], "and cluster 1, kmeans variance is: \n",
+          km_var[1, 1], "  \n")
+
+cat("For input mean of", input_parameter[1], "and cluster 2, kmeans variance is: \n",
+          km_var[1, 2], "  \n")
+```
+
+```{r}
+cat("For input mean of", input_parameter[1], "and cluster 1, gmm means is: \n",
+          gmm_means[1, 1], "  \n")
+
+cat("For input mean of", input_parameter[1], "and cluster 2, gmm means is: \n",
+          gmm_means[1, 2], "  \n")
+
+cat("For input mean of", input_parameter[1], "and cluster 1,gmm variance is: \n",
+          gmm_var[1, 1], "  \n")
+
+cat("For input mean of", input_parameter[1], "and cluster 2, gmm variance is: \n",
+          gmm_var[1, 2], "  \n")
+```
+
+
+
+Mean of 1.0
+
+```{r}
+cat("For input mean of", input_parameter[2], "and cluster 1, kmeans means is: \n",
+          km_means[2, 1], "  \n")
+
+cat("For input mean of", input_parameter[2], "and cluster 2, kmeans means is: \n",
+          km_means[2, 2], "  \n")
+
+cat("For input mean of", input_parameter[2], "and cluster 1, kmeans variance is: \n",
+          km_var[2, 1], "  \n")
+
+cat("For input mean of", input_parameter[2], "and cluster 2, kmeans variance is: \n",
+          km_var[2, 2], "  \n")
+```
+
+```{r}
+cat("For input mean of", input_parameter[2], "and cluster 1, gmm means is: \n",
+          gmm_means[2, 1], "  \n")
+
+cat("For input mean of", input_parameter[2], "and cluster 2, gmm means is: \n",
+          gmm_means[2, 2], "  \n")
+
+cat("For input mean of", input_parameter[2], "and cluster 1,gmm variance is: \n",
+          gmm_var[2, 1], "  \n")
+
+cat("For input mean of", input_parameter[2], "and cluster 2, gmm variance is: \n",
+          gmm_var[2, 2], "  \n")
+```
+
+
+
+
+Mean of 2.0
+
+```{r}
+cat("For input mean of", input_parameter[3], "and cluster 1, kmeans means is: \n",
+          km_means[3, 1], "  \n")
+
+cat("For input mean of", input_parameter[3], "and cluster 2, kmeans means is: \n",
+          km_means[3, 2], "  \n")
+
+cat("For input mean of", input_parameter[3], "and cluster 1, kmeans variance is: \n",
+          km_var[3, 1], "  \n")
+
+cat("For input mean of", input_parameter[3], "and cluster 2, kmeans variance is: \n",
+          km_var[3, 2], "  \n")
+```
+
+
+
+
+```{r}
+cat("For input mean of", input_parameter[3], "and cluster 1, gmm means is: \n",
+          gmm_means[3, 1], "  \n")
+
+cat("For input mean of", input_parameter[3], "and cluster 2, gmm means is: \n",
+          gmm_means[3, 2], "  \n")
+
+cat("For input mean of", input_parameter[3], "and cluster 1,gmm variance is: \n",
+          gmm_var[3, 1], "  \n")
+
+cat("For input mean of", input_parameter[3], "and cluster 2, gmm variance is: \n",
+          gmm_var[3, 2], "  \n")
+```
+
+
+
+```{r}
+print(km_var)
+print(gmm_var)
+
+print(km_means)
+print(gmm_means)
+```
+
+
+```{r}
+dist1 <- rnorm(3000, 0.5, 1)
+dist2 <- rnorm(3000, -0.5, 1)
+
+final_dat_check = c(dist1, dist2)
+  
+#running k-means on the data
+clus_km <- kmeans(final_dat_check, centers = 2)
+  
+#running Gaussian mixture
+clus_gmm <- Mclust(final_dat_check, G= 2)
+
+clus_gmm$parameter$mean[1]
+
+clus_gmm$parameter$mean
+
+clus_gmm$parameter$variance$sigmasq
+```
+
+
+```{r, eval=FALSE}
+cat("For input mean of", input_parameter[i], ", kmeans variances are: \n",
+          kmeansfit_4$totss, "  \n")
+
+
+  #generating the data for each mu
+  #data <- normal(i, 1, 3000)
+```
+
