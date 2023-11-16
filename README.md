@@ -122,11 +122,19 @@ Loan Prediction is a knowledge and learning hackathon on Analyticsvidhya. Dream 
 Caterpillar Tube Pricing is a competition on Kaggle. This is a regression problem: based on information about tube assemblies we predict their prices. General description and data are available on [Kaggle](https://www.kaggle.com/c/caterpillar-tube-pricing).
 Dataset consists of many files, so there is an additional challenge in combining the data snd selecting the features.
 
-## Natural language processing.
+## Clustering + Dimensionality Reduction 
 
-### Bag of Words Meets Bags of Popcorn
+### Cereal Customer Segmentation 
 
-[Github](https://github.com/Erlemar/Erlemar.github.io/blob/master/Notebooks/Bag_of_Words.ipynb) [nbviewer](http://nbviewer.jupyter.org/github/Erlemar/Erlemar.github.io/blob/master/Notebooks/Bag_of_Words.ipynb)
+The primary goal of this project is to analyze and cluster cereal products based on various nutritional factors. This involves examining different cereals' nutrient content to identify potential market segments, especially niche markets, and to understand manufacturers' strategies in positioning their products.
+
+Principal Component Analysis (PCA) was used to reduce data dimensionality, resulting in two main components explaining most of the variation.
+K-Means clustering helped segment the market into 9 distinct cereal types, identified as optimal using SSE, F, and Silhouette statistics.
+Gaussian Mixture Models (GMM) were compared with K-Means for clustering, ultimately favoring the 9-cluster K-Means solution.
+Logistic regression analyzed the relationship between cereal characteristics and their shelf placement, incorporating factors like "Healthy Nutrients" and "Unhealthy Nutrients".
+
+[R Markdown](https://github.com/klg125/portfolio/blob/master/notebooks/Cereal%20Case.Rmd) 
+[Notebook](https://github.com/klg125/portfolio/blob/master/notebooks/Cereal%20Clustering%20Case.pdf)
 
 Bag of Words Meets Bags of Popcorn is a sentimental analysis problem. Based on texts of reviews we predict whether they are positive or negative. General description and data are available on [Kaggle](https://www.kaggle.com/c/word2vec-nlp-tutorial).
 The data provided consists of raw reviews and class (1 or 2), so the main part is cleaning the texts.
@@ -149,6 +157,16 @@ This notebook shows how a new text can be generated based on a given corpus usin
 
 This notebook shows how text can be summarized choosing several most important sentences from the text. I explore various methods of doing this based on a news article.
 
+
+## Recommendation systems + NLP 
+
+### Collaborative filtering, Latent semantic analysis
+
+[Presentation]([https://github.com/Erlemar/Erlemar.github.io/blob/master/Notebooks/Collaborative_filtering.ipynb](https://github.com/klg125/portfolio/blob/master/notebooks/IEMS308%20Recipe%20Project%20%E2%80%94%20Recommender%20Systems%20(1).pdf)) 
+[Code](https://github.com/klg125/portfolio/blob/master/notebooks/ProjectLSA%20(1).R)
+
+I leveraged LSA to create 7-dimensional user and recipe profile to recommend 10 new recipes for 3000 test users similar to previously downloaded recipes, achieving 32% precision@10 score.
+
 ## Deep Learning
 
 ### Computer Vision: Golf Swing Outcome Prediction using Computer Vision
@@ -161,35 +179,12 @@ I extracted 90 frames from 590 three-second side-view golf swing video and condu
 ### TelePrime Customer Churn Prediction 
 Standardized 12 continuous features on credit score and customer demographics, creating 5 derived features on tenure length. Leveraged stepAIC to remove 6 features; applied logistic regression on finalized dataset; visualized accuracy, sensitivity, and specificity of model to locate 36.7% as the optimal probability cutoff to increase true positive rate.
 
-[Github](https://github.com/Erlemar/Erlemar.github.io/blob/master/Notebooks/NN_GGG.ipynb) [nbviewer]
-
-([https://github.com/klg125/portfolio/blob/master/notebooks/TelePrime%20Churn.pdf])
+[View Notebook]([https://github.com/klg125/portfolio/blob/master/notebooks/TelePrime%20Churn.pdf])
 
 ### Biomedical Genome Regression 
 Fitted regression tree to Trp63 genome dataset (3K rows and 230 features) to discover important transcription gene predictors. I applied pruning and bagging with best parameter from CV; found 3 influential genes through random forest and lasso regression. 
 
-[Github](https://github.com/Erlemar/Erlemar.github.io/blob/master/Notebooks/NN_GGG.ipynb) [nbviewer]([https://github.com/klg125/portfolio/blob/master/notebooks/Regression%20in%20Biomedical%20Research_Github.pdf])
-
-
-### Feedforward neural network with regularization
+[View Notebook]([https://github.com/klg125/portfolio/blob/master/notebooks/Regression%20in%20Biomedical%20Research_Github.pdf])
 
 
 
-This is a simple example of feedforward neural network with regularization. It is based on Andrew Ng's lectures on Coursera. I used data from Kaggle's challenge "Ghouls, Goblins, and Ghosts... Boo!", it is available [here](https://www.kaggle.com/c/ghouls-goblins-and-ghosts-boo).
-
-## Data exploration and analysis
-
-### Telematic data
-
-[Github](https://github.com/Erlemar/Erlemar.github.io/blob/master/Notebooks/Devices_analysis.ipynb) [nbviewer](http://nbviewer.jupyter.org/github/Erlemar/Erlemar.github.io/blob/master/Notebooks/Devices_analysis.ipynb)
-
-I have a dataset with telematic information about 10 cars driving during one day. I visualise data, search for insights and analyse the behavior of each driver. I can't share the data, but here is the notebook. I want to notice that folium map can't be rendered by native github, but nbviewer.jupyter can do it.
-
-## Recommendation systems.
-
-### Collaborative filtering
-
-[Github](https://github.com/Erlemar/Erlemar.github.io/blob/master/Notebooks/Collaborative_filtering.ipynb) [nbviewer](http://nbviewer.jupyter.org/github/Erlemar/Erlemar.github.io/blob/master/Notebooks/Collaborative_filtering.ipynb)
-
-Recommenders are systems, which predict ratings of users for items. There are several approaches to build such systems and one of them is Collaborative Filtering. 
-This notebook shows several examples of collaborative filtering algorithms.
