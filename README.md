@@ -1,15 +1,13 @@
-Now I have a personal [website](https://andlukyane.com/)!
 
+# Data science Portfolio By Jing Ming Li
 
-# Data science portfolio by Andrey Lukyanenko
-
-This portfolio is a compilation of notebooks which I created for data analysis or for exploration of machine learning algorithms. A separate category is for separate projects.
+Hi! My name is JM Kevin Li, a impact-driven data scientist with previous experiences at Blackstone, Cboe Global Markets, Calamos Investments, and Dunkin'. Welcome to my portfolio. Below is a list of all my projects. 
 
 ## Stand-alone projects.
 
 ### Handwritten digit recognition
 
-This is my own project using image recognition methods in practice. This is a site (also works on mobile) where user can draw a digit, and machine learning models (FNN and CNN) will try to recognize it. After than models can use the drawn digit for training to improve their accuracy. Live version is [here](https://digits-draw-recognize.herokuapp.com/). The code can be found [here](https://github.com/Erlemar/digit-draw-recognize).
+This is my own project using image recognition methods in practice. This is a site (also works on mobile) where user can draw a digit, and machine learning models (FNN and CNN) will try to recognize it. After than models can use the drawn digit for training to improve their accuracy. The code can be found [here](https://github.com/Erlemar/digit-draw-recognize).
 
 ### Chatbot in telegram
 
@@ -151,19 +149,31 @@ This notebook shows how a new text can be generated based on a given corpus usin
 
 This notebook shows how text can be summarized choosing several most important sentences from the text. I explore various methods of doing this based on a news article.
 
-## Clustering
+## Deep Learning
 
-### Clustering with KMeans
+### Computer Vision: Golf Swing Outcome Prediction using Computer Vision
 
-[Github](https://github.com/Erlemar/Erlemar.github.io/blob/master/Notebooks/Clustering_with_K-Means.ipynb) [nbviewer](http://nbviewer.jupyter.org/github/Erlemar/Erlemar.github.io/blob/master/Notebooks/Clustering_with_K-Means.ipynb)
+I extracted 90 frames from 590 three-second side-view golf swing video and conducted image dimension resizing using OpenCV. I leveraged Movenet Lightning to obtain position of 17 body parts for each frame; eliminated 93% of frames by building a frame selector algorithm that utilizes polar coordinates to identify 6 most important positions in the golf swing. Successfully predicted club face angle and club path of golf shot with elastic net regression that achieved MAE of 0.82 and 0.9, respectively. 
 
-Clustering is an approach to unsupervised machine learning. Clustering with KMeans is one of algorithms of clustering. in this notebook I'll demonstrate how it works. Data used is about various types of seeds and their parameters. It is available [here](https://archive.ics.uci.edu/ml/datasets/seeds).
 
-## Neural networks
+## Micro Projects in R
+
+### TelePrime Customer Churn Prediction 
+Standardized 12 continuous features on credit score and customer demographics, creating 5 derived features on tenure length. Leveraged stepAIC to remove 6 features; applied logistic regression on finalized dataset; visualized accuracy, sensitivity, and specificity of model to locate 36.7% as the optimal probability cutoff to increase true positive rate.
+
+[Github](https://github.com/Erlemar/Erlemar.github.io/blob/master/Notebooks/NN_GGG.ipynb) [nbviewer]
+
+([https://github.com/klg125/portfolio/blob/master/notebooks/TelePrime%20Churn.pdf])
+
+### Biomedical Genome Regression 
+Fitted regression tree to Trp63 genome dataset (3K rows and 230 features) to discover important transcription gene predictors. I applied pruning and bagging with best parameter from CV; found 3 influential genes through random forest and lasso regression. 
+
+[Github](https://github.com/Erlemar/Erlemar.github.io/blob/master/Notebooks/NN_GGG.ipynb) [nbviewer]([https://github.com/klg125/portfolio/blob/master/notebooks/Regression%20in%20Biomedical%20Research_Github.pdf])
+
 
 ### Feedforward neural network with regularization
 
-[Github](https://github.com/Erlemar/Erlemar.github.io/blob/master/Notebooks/NN_GGG.ipynb) [nbviewer](http://nbviewer.jupyter.org/github/Erlemar/Erlemar.github.io/blob/master/Notebooks/NN_GGG.ipynb)
+
 
 This is a simple example of feedforward neural network with regularization. It is based on Andrew Ng's lectures on Coursera. I used data from Kaggle's challenge "Ghouls, Goblins, and Ghosts... Boo!", it is available [here](https://www.kaggle.com/c/ghouls-goblins-and-ghosts-boo).
 
