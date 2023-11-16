@@ -1,7 +1,9 @@
 
-# Data science Portfolio By Jing Ming Li
+# Data Science Portfolio By Jing Ming Li
 
-Hi! My name is JM Kevin Li, a impact-driven data scientist with previous experiences at Blackstone, Cboe Global Markets, Calamos Investments, and Dunkin'. Welcome to my portfolio. Below is a list of all my projects. Here is a copy of my [resume](https://github.com/klg125/portfolio/blob/master/notebooks/Kevin_Li_Resume_0920.pdf)
+Hi! My name is J.M Kevin Li, a impact-driven data scientist with previous experiences at Blackstone, Cboe Global Markets, Calamos Investments, and Dunkin'. Welcome to my portfolio. 
+
+Below is a list of all my projects. Here is a copy of my [resume](https://github.com/klg125/portfolio/blob/master/notebooks/Kevin_Li_Resume_0920.pdf).
 
 ## Classification Problems 
 
