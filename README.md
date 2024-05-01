@@ -1,7 +1,7 @@
 
 # Microprojects 
 
-This is only my microprojects, for my main projects, please visit my [Portfolio]([https://github.com/klg125/portfolio/blob/master/notebooks/Opioid_STEMFellowship.pdf](https://www.datascienceportfol.io/kevinli)) 
+This is only my microprojects, for my main projects, please visit my [Portfolio](https://www.datascienceportfol.io/kevinli) 
 
 ### Opioid-Related Emergency Department Admissions Prediction through Internet Search Keywords
 [Report](https://github.com/klg125/portfolio/blob/master/notebooks/Opioid_STEMFellowship.pdf)
